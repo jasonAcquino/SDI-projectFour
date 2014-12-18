@@ -25,7 +25,7 @@ var testNumber = "212-867-5309";
         else {
          return false;
         };
- 
+        
     };
     
 var validNumber = numberCheck(testNumber)
@@ -41,17 +41,15 @@ if (validNumber === true) {
 var emailCheck;
 var testEmail = "janedoe@gmail.com";
 
-var emailCheck = function(emailGiven){
-    if (emailGiven.indexOf("@") === -1) {
-        return false;
-    }if (emailGiven.indexOf(".") === -1) {
-        return false;
-    } else
-        return true;
-    
-    
-    
-};
+    var emailCheck = function(emailGiven){
+        if (emailGiven.indexOf("@") === -1) {
+            return false;
+        }if (emailGiven.indexOf(".") === -1) {
+            return false;
+        } else
+            return true;
+        
+    };
 
 var validEmail = emailCheck(testEmail);
 if (validEmail === true) {
@@ -68,13 +66,13 @@ if (validEmail === false) {
 var urlCheck;
 var testUrl = "https://www.youtube.com";
 
-var urlCheck = function (possibleUrl) {
-    if ((possibleUrl.substr(0,7) === "http://") || (possibleUrl.substr(0,8) === "https://")) {
-        return true;
-    } else
-        return false;
-
-};
+    var urlCheck = function (possibleUrl) {
+        if ((possibleUrl.substr(0,7) === "http://") || (possibleUrl.substr(0,8) === "https://")) {
+            return true;
+        } else
+            return false;
+        
+    };
 
 var validUrl = urlCheck(testUrl);
 if (validUrl === true) {
@@ -86,28 +84,60 @@ if (validUrl === false) {
 
 // 4. Title-case a string (split into words, then uppercase the first letter of each word).
 
+var caseFix = function (stringGiven) {
+    var eachWord = stringGiven.split(" ");
+    var uppercase = "";
+    
+    for (i = 0; i < eachWord.length; i++) {
+        eachWord[i] = eachWord[i].charAt(0).toUpperCase() + eachWord[i].substring(1, eachWord[i].length);
+    };
+        for (i = 0; i < eachWord.length; i++) {
+            uppercase = uppercase + eachWord[i] + " ";
+        };
+        
+        return uppercase;
+    
+};
 
-
-
+console.log(caseFix("bobby brown from new edition"));
 
 /* 5. Given a string that is a list of things separated by a given string, as well as another
 string separator, return a string with the first separator changed to the second: “a,b,c” +
 “,” + “/” --> “a/b/c”*/
 
+var changeSeparator = function (originalString, replacedSeparator, newSeparator) {
+    var subString = originalString.split(replacedSeparator);
+    var newString = "";
+    
+    for (i = 0; i < subString.length; i++) {
+        if (i < subString.length -1) {
+            newString = newString + subString[i] + newSeparator;
+        } else {
+            newString = newString + subString[i];
+        };
+        
+    };
+    return newString;
+    
+};
 
+console.log(changeSeparator("Ronnie,Bobby,Ricky", ",", "/"));
 
 
 
 //NUMBER FUNCTIONS
 
-//Format a number to use a specific number of decimal places as for money: 2.1 --> 2.10.
+// 6. Format a number to use a specific number of decimal places as for money: 2.1 --> 2.10.
+
+var changeDecimal = function(number, decimalPlace) {
+    return number.toFixed(decimalPlace);  
+    
+};
+
+console.log(changeDecimal(22.2222, 2));
 
 
-
-
-
-
-/*Fuzzy-match a number: is the number above or below a number within a certain
+/* 7. Fuzzy-match a number: is the number above or below a number within a certain
 percent?*/
 
 
@@ -116,14 +146,14 @@ percent?*/
 
 
 
-//Find the number of hours or days difference between two dates.
+// 8. Find the number of hours or days difference between two dates.
 
 
 
 
 
 
-/*Given a string version of a number, such as “42”, return the value as an actual Number
+/* 9. Given a string version of a number, such as “42”, return the value as an actual Number
 data type, such as 42.*/
 
 
@@ -134,22 +164,21 @@ data type, such as 42.*/
 
 //ARRAY FUNCTIONS
 
-//Find the smallest value in an array than is greater than a given number.
+// 10. Find the smallest value in an array than is greater than a given number.
 
 
 
 
 
 
-/*Find the total value of just the numbers in an array, even if some of the items are not
+/* 11. Find the total value of just the numbers in an array, even if some of the items are not
 numbers.*/
 
 
 
 
 
-
-/*Given an array of objects and the name of a key, return the array sorted by the value of
+/* 12. Given an array of objects and the name of a key, return the array sorted by the value of
 that key in each of the objects: “a” + [{a:2},{a:3},{a:1}] --> [{a:1},{a:2},{a:3}].*/
 
 
