@@ -39,6 +39,8 @@ if (validNumber === true) {
 // 2. Does a string follow an aaa@bbb.ccc pattern like an email address?
 
 var emailCheck;
+var testEmail = "janedoe@gmail.com";
+
 var emailCheck = function(emailGiven){
     if (emailGiven.indexOf("@") === -1) {
         return false;
@@ -51,7 +53,7 @@ var emailCheck = function(emailGiven){
     
 };
 
-var validEmail = emailCheck("janedoe@gmail.com");
+var validEmail = emailCheck(testEmail);
 if (validEmail === true) {
     console.log("valid email address")
 };
@@ -63,9 +65,24 @@ if (validEmail === false) {
 
 // 3. Is the string a URL (Does it start with http:// or https://)?
 
+var urlCheck;
+var testUrl = "https://www.youtube.com";
 
+var urlCheck = function (possibleUrl) {
+    if ((possibleUrl.substr(0,7) === "http://") || (possibleUrl.substr(0,8) === "https://")) {
+        return true;
+    } else
+        return false;
 
+};
 
+var validUrl = urlCheck(testUrl);
+if (validUrl === true) {
+    console.log("valid url")
+};
+if (validUrl === false) {
+    console.log("invalid url")
+};
 
 // 4. Title-case a string (split into words, then uppercase the first letter of each word).
 
@@ -73,7 +90,7 @@ if (validEmail === false) {
 
 
 
-/*Given a string that is a list of things separated by a given string, as well as another
+/* 5. Given a string that is a list of things separated by a given string, as well as another
 string separator, return a string with the first separator changed to the second: “a,b,c” +
 “,” + “/” --> “a/b/c”*/
 
