@@ -156,8 +156,15 @@ percent?*/
 /* 9. Given a string version of a number, such as Ò42Ó, return the value as an actual Number
 data type, such as 42.*/
 
-
-
+var valueSwap = function(givenString) {
+    if (givenString == isNaN) {
+        return 0;
+    } else {
+        return Number(givenString);
+    }
+    
+};
+console.log(valueSwap("5"));
 
 
 
@@ -174,7 +181,22 @@ data type, such as 42.*/
 /* 11. Find the total value of just the numbers in an array, even if some of the items are not
 numbers.*/
 
+var theArray = ["Ronnie", "Bobby", 5, "Ricky", 10, "Mike", 20, "Ralph"];
+var solution;
 
+    var addNumbers = function (theArray) {
+        var sum = 0;
+        for (var i in theArray) {
+            if (!isNaN(theArray[i]) && typeof(theArray[i]) != "New Edition") {
+                sum += theArray[i];
+            };
+        };
+        return sum;
+            
+    };
+
+solution = addNumbers(theArray);
+console.log(solution);
 
 
 
